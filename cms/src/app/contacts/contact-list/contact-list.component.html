@@ -1,1 +1,43 @@
-<p>contact-list works!</p>
+<!-- contact-list.component.html -->
+
+<!-- Panel with header and body to display the contact list -->
+<div class="panel panel-default">
+    <!-- Panel Header -->
+    <div class="panel-heading">
+        <div class="col-xs-8">
+            <h3 class="panel-title">Contacts</h3>
+        </div>
+            <!-- 
+            Button to create a new contact (anchor tag) 
+            (click)="createNewContact()"
+            -->
+        <div class="col-xs-4 text-right">
+            <a href="#" class="btn btn-primary">New Contact</a>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <!-- Panel Body -->
+    <div class="panel-body">
+        <!-- 
+        Display the name and picture for each contact 
+            *ngFor="let contact of contactList"
+            {{ contact.name }}
+            <img [src]="contact.imageUrl" alt="{{ contact.name }} Image">
+        -->
+        <div class="media" *ngFor="let contact of contacts">
+            <div class="col-xs-8">
+                <h4 class="media-heading">{{ contact.name }}</h4>
+            </div>
+
+            <div class="col-xs-4 text-right">
+                <div class="image-size">
+                    <img class="media-object" [src]="contact.imageUrl" alt="{{ contact.name }} Image">
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        <div>
+    </div>
+</div>

@@ -16,11 +16,12 @@ export class Contact {
     // Additional properties or methods can be added as needed
 
     // Constructor to initialize the contact with provided data
-    constructor(id: string, name: string, email: string, phone: string, group: Contact[] = []) {
+    constructor(id: string, name: string, email: string, phone: string, imageUrl: string, group: Contact[] = []) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.imageUrl = imageUrl;
         this.group = group;
     }
 }
