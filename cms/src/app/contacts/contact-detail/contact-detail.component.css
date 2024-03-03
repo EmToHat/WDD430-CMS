@@ -1,0 +1,9 @@
+.panel {
+    border: .3px solid #868886;
+    border-radius: 10px;
+}
+
+.panel-heading {
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+}
