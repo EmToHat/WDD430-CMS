@@ -21,7 +21,8 @@
     
         <!-- Panel Body -->
         <div class="panel-body">
-            <div class="media" *ngFor="let contact of contacts">
+            <cms-contact-item></cms-contact-item>
+            <!--<a class="media" *ngFor="let contact of contacts">
                 <div class="col-xs-9">
                     <h4 class="media-heading">{{ contact.name }}</h4>
                 </div>
@@ -33,7 +34,6 @@
                 </div>
     
                 <div class="clearfix"></div>
-            <div>
+            </a>-->
         </div>
-    </div>
 </div>
