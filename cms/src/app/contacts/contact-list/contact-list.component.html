@@ -21,7 +21,7 @@
     
         <!-- Panel Body -->
         <div class="panel-body">
-            <cms-contact-item></cms-contact-item>
+            <cms-contact-item *ngFor="let contact of contacts" [contact]="contact"></cms-contact-item>
             <!--<a class="media" *ngFor="let contact of contacts">
                 <div class="col-xs-9">
                     <h4 class="media-heading">{{ contact.name }}</h4>
