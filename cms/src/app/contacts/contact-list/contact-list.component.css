@@ -1,5 +1,9 @@
+.row {
+    margin: 8px;
+}
+
 .panel {
-    border: .3px solid #868886;
+    border: .3px solid #b1b1b1;
     border-radius: 10px;
 }
 
@@ -12,15 +16,16 @@
     justify-content: center;
 }
 
-.media { 
-    border: .3px solid #868886;
+.media {
+    border: .3px solid #b1b1b1;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .image-size {
-    width: 80px;
+    width: 75px;
 }

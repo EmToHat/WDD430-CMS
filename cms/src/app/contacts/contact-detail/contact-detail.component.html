@@ -1,23 +1,33 @@
 <!-- contact-detail.component.html -->
 
-<!-- Panel to display contact details -->
-<div class="panel panel-default">
-    <!-- Panel Header -->
-    <div class="panel-heading">
-    <!-- Display the name and image in the header -->
-        <h3 class="panel-header">{{ selectedContact.name }}</h3>
-        <img class="img-rounded" [src]="selectedContact.imageUrl" alt="{{ selectedContact.name }} Image">
-    <!-- Edit and Delete buttons -->
-        <div class="btn-group" role="group" aria-label="Contact Actions">
-            <a href="#" class="btn btn-primary">Edit</a>
-            <a href="#" class="btn btn-danger">Delete</a>
-        </div>
-    </div>
+<div class="row">
+    <div class="panel panel-default">
+        <!-- Panel Header -->
+        <div class="panel-heading">
+            <!-- First row with name -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="panel-title">{{ selectedContact.name }}</h3>
+                </div>
+            </div>
 
-    <!-- Panel Body -->
-    <div class="panel-body">
-        <!-- Display the email and phone number in the body -->
-        <p><strong>Email:</strong> {{ selectedContact.email }}</p>
-        <p><strong>Phone:</strong> {{ selectedContact.phone }}</p>
+            <!-- Second row with image on the left and buttons on the right -->
+            <div class="row">
+                <div class="col-xs-6">
+                    <img class="img-rounded" [src]="selectedContact.imageUrl" alt="{{ selectedContact.name }} Image">
+                </div>
+                <div class="col-xs-6 text-right">
+                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Panel Body -->
+        <div class="panel-body">
+            <!-- Display the email and phone number in the body -->
+            <p><strong>Email:</strong> {{ selectedContact.email }}</p>
+            <p><strong>Phone:</strong> {{ selectedContact.phone }}</p>
+        </div>
     </div>
 </div>
