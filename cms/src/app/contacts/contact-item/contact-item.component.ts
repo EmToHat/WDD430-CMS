@@ -7,5 +7,6 @@ import { Contact } from '../contact.model';
   styleUrl: './contact-item.component.css'
 })
 export class ContactItemComponent {
+  // Define a class input variable named 'contact'
   @Input() contact: Contact;
 }
