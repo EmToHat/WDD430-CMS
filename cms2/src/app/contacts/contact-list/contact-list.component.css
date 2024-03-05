@@ -1,0 +1,34 @@
+.panel-title {
+    font-size: x-large;
+}
+
+.contact-list-name {
+    font-size: larger;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.contact-list-items {
+    color: #333333;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 4px;
+
+    display: flex;
+    align-items: center;
+}
+
+.contact-list-items:hover {
+    color: #333333;
+    background-color: #ddd;
+}
+
+.panel-container {
+    margin: 8px;
+}
