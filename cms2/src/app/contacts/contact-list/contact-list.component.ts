@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Contact } from '../contact-model';
 
 @Component({
@@ -9,6 +9,14 @@ import { Contact } from '../contact-model';
 export class ContactListComponent {
   // Define the variable to store the list of contacts.
   public contacts: Contact[] = [];
+
+  // Create a new custom EventEmitter with Contact as the data type
+  @Output() selectedContactEvent: EventEmitter<Contact> = new EventEmitter<Contact>();
+
+  // Method to handle the selection of a contact and emit the event
+  onSelected(contact: Contact) {
+    this.selectedContactEvent.emit(contact);
+  }
 
   // Initialize the array with 2 dummy contact objects.
   constructor() {

@@ -1,3 +1,6 @@
+// Parent Component
+// Children Components: Contact List and Contact Detail.
+
 import { Component } from '@angular/core';
 
 @Component({
