@@ -1,1 +1,28 @@
-<p>contact-detail works!</p>
+<div class="row panel-container">
+    <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <h1 class="panel-title">Test<!--{{ contact.name }}--></h1>
+                </div>
+                <div class="row contact-detail-heading">
+                    <div class="col-xs-4">
+                        <!--<img class="contact-image pull-left" src="{{ contact.imgUrl }}" alt="{{ contact.name }}">-->
+                    </div>
+                    <div class="btn-group pull-right" role="group" aria-label="Button Group">
+                        <div class="col-xs-4">
+                            <button class="btn btn-primary pull-right">Edit</button>
+                        </div>
+                        <div class="col-xs-4">
+                            <button class="btn btn-danger pull-right">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                        <p class="contact-detail-item"><strong>Email: </strong> <!-- {{ contact.email }} --> </p>
+                        <p class="contact-detail-item"><strong>Phone: </strong> <!-- {{ contact.phone }} --></p>
+                </div>
+            </div>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Contact } from '../contact-model';
 
 @Component({
   selector: 'cms2-contact-detail',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './contact-detail.component.css'
 })
 export class ContactDetailComponent {
-
+  // Define the variable to store the list of contacts.
+  public contacts: Contact[] = [];
 }

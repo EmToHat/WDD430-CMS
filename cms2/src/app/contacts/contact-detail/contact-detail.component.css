@@ -1,0 +1,41 @@
+.panel-title {
+    font-size: x-large;
+    padding-left: 25px;
+}
+
+.contact-list-name {
+    font-size: larger;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.panel-container {
+    margin: 8px;
+}
+
+.contact-image {
+    height: 100px;
+    border-radius: 5px;
+}
+
+.contact-detail-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.contact-detail-item {
+    margin: 0 16px 0 16px;
+}
