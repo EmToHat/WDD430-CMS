@@ -22,6 +22,7 @@
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .contact-list-items:hover {
@@ -31,4 +32,9 @@
 
 .panel-container {
     margin: 8px;
+}
+
+.contact-image {
+    height: 100px;
+    border-radius: 5px;
 }
