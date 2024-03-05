@@ -7,16 +7,10 @@
                 <div class="col-xs-3">
                     <button class="btn btn-success pull-right">New Contact</button>
                 </div>
+                <div class="clearfix"></div>
             </div>
             <div class="panel-body">
-                <a class="contact-list-items row" *ngFor="let contact of contacts">
-                    <div class="col-xs-8">
-                        <h3 class="contact-list-name">Bro. {{ contact.name }}</h3>
-                    </div>
-                    <div class="col-xs-4">
-                        <img class="contact-image pull-right" src="{{ contact.imgUrl }}" alt="{{ contact.name }}">
-                    </div>
-                </a>
+                <cms2-contact-item *ngFor="let contact of contacts" [contact]="contact"></cms2-contact-item>
             </div>
     </div>
 </div>
