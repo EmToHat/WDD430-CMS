@@ -3,6 +3,8 @@
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Contact } from '../contact.model';
+import { ContactsService } from '../contacts.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'cms-contact-list',
@@ -11,19 +13,26 @@ import { Contact } from '../contact.model';
 })
 
 export class ContactListComponent {
-  public contacts: Contact[] = [
-    new Contact('1', 'R. Kent Jackson', 'jacksonk@byui.edu', '208-496-3771', '../../assets/images/jacksonk.jpg', []),
-    new Contact('2', 'Rex Barzee', 'barzeer@byui.edu', '208-496-3768', '../../assets/images/barzeer.jpg', [])
-  ];
-  
-  // The ContactListComponent needs to recognize whent the end user clicks on a contact in the contact list
-  // and call the method that will emit a custom event with the selected Contact in it.
+  contacts: Contact[] = [];
+  contactId: string;
 
-  // Create a new custom EventEmitter with Contact as the data type
-  @Output() selectedContactEvent: EventEmitter<Contact> = new EventEmitter<Contact>();
+  constructor(private contactsService: ContactsService,
+              private router: Router,
+              private route: ActivatedRoute) {
+    this.contacts = this.contactsService.getContacts();
+  }
 
-  onContactSelected(contact: Contact) {
-    this.selectedContactEvent.emit(contact);
+  ngOnInit() {
+    this.contactsService.contactChangedEvent
+      .subscribe(
+        (contacts: Contact[]) => {
+          this.contacts = contacts;
+        }
+      );
+  }
+
+  onNewContact(){
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 
 }

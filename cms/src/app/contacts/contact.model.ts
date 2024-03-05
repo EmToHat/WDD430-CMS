@@ -1,6 +1,10 @@
 // contact.model.ts
 // Purpose: stores all the data associated with an individual contact.
 
+// public is a property or method, that is accessible from outside the class. Default visibility.
+// private is a property or method, that is only accessible within the class that defines it. Instances of this class can't directly access private members.
+// protected is a property or method that is accessible within the class and it's subclasses (derived classes).
+
 export class Contact {
     // Properties representing contact information
     public id: string;

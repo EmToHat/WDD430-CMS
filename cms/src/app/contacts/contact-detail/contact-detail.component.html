@@ -1,7 +1,7 @@
 <!-- contact-detail.component.html -->
 
 <div class="row">
-    <div class="panel panel-default">
+    <div class="panel panel-default" *ngIf="!contact.name.includes('team')">
         <!-- Panel Header -->
         <div class="panel-heading">
             <!-- First row with name -->
@@ -14,7 +14,7 @@
             <!-- Second row with image on the left and buttons on the right -->
             <div class="row">
                 <div class="col-xs-6">
-                    <img class="img-rounded" [src]="contact.imageUrl" alt="{{ contact.name }} Image">
+                    <img class="img-rounded" *ngIf="!contact.name.includes('team')" [src]="contact.imageUrl" alt="{{ contact.name }} Image">
                 </div>
                 <div class="col-xs-6 text-right">
                     <a href="#" class="btn btn-primary">Edit</a>
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-    
+
         <!-- Panel Body -->
         <div class="panel-body">
             <!-- Display the email and phone number in the body -->
