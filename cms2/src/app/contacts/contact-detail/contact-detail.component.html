@@ -1,27 +1,35 @@
 <div class="row panel-container">
     <div class="panel panel-default">
             <div class="panel-heading">
-                <div class="row">
-                    <h1 class="panel-title">Test<!--{{ contact.name }}--></h1>
+                <div class="title-container">
+                    <div class="row">
+                        <div class="col-xs-12 pull-left">
+                            <h1 class="panel-title">Bro. {{ contact.name }} </h1>
+                        </div>
+                    </div>
                 </div>
                 <div class="row contact-detail-heading">
-                    <div class="col-xs-4">
-                        <!--<img class="contact-image pull-left" src="{{ contact.imgUrl }}" alt="{{ contact.name }}">-->
-                    </div>
-                    <div class="btn-group pull-right" role="group" aria-label="Button Group">
+                    <div class="contact-image-container col-xs-6">
                         <div class="col-xs-4">
-                            <button class="btn btn-primary pull-right">Edit</button>
+                            <img class="contact-image" src="{{ contact.imgUrl }}" alt="{{ contact.name }}">
                         </div>
-                        <div class="col-xs-4">
-                            <button class="btn btn-danger pull-right">Delete</button>
+                    </div>
+                    <div class="btn-container col-xs-6">
+                        <div class="btn-group pull-right" role="group" aria-label="Button Group">
+                            <div class="col-xs-4">
+                                <button class="btn btn-primary">Edit</button>
+                            </div>
+                            <div class="col-xs-4">
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="panel-body">
                 <div class="row">
-                        <p class="contact-detail-item"><strong>Email: </strong> <!-- {{ contact.email }} --> </p>
-                        <p class="contact-detail-item"><strong>Phone: </strong> <!-- {{ contact.phone }} --></p>
+                        <p class="contact-detail-item"><strong>Email: </strong> {{ contact.email }} </p>
+                        <p class="contact-detail-item"><strong>Phone: </strong> {{ contact.phone }} </p>
                 </div>
             </div>
     </div>

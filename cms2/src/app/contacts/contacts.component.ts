@@ -2,6 +2,7 @@
 // Children Components: Contact List and Contact Detail.
 
 import { Component } from '@angular/core';
+import { Contact } from '../contacts/contact-model';
 
 @Component({
   selector: 'cms2-contacts',
@@ -9,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrl: './contacts.component.css'
 })
 export class ContactsComponent {
-
+  selectedContact: Contact;
 }

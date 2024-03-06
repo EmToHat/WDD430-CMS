@@ -1,6 +1,7 @@
 .panel-title {
     font-size: x-large;
     padding-left: 25px;
+    margin-left: 12px;
 }
 
 .contact-list-name {
@@ -9,7 +10,7 @@
 
 .panel-heading {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
     margin: 0;
 }
@@ -19,21 +20,25 @@
 }
 
 .contact-image {
-    height: 100px;
+    height: 140px;
     border-radius: 5px;
 }
 
 .contact-detail-heading {
+    margin: 10px 0 0 10px;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
-.btn-group {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+.contact-image-container {
+    justify-content: flex-start;
+    margin: 0;
+}
 
+.btn-container {
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 10px;
 }
 
 .contact-detail-item {
