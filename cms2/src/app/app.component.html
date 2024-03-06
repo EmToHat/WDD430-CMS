@@ -1,4 +1,15 @@
-<cms2-header></cms2-header>
-<div class="m-5">
-    <cms2-contacts></cms2-contacts>
+<cms2-header (selectedFeatureEvent)="switchView($event)"></cms2-header>
+<div class="container pull-left">
+    <!-- Conditionally load components based on selectedFeature -->
+    <div *ngIf="selectedFeature === 'documents'">
+        <cms2-documents></cms2-documents>
+    </div>
+
+    <div *ngIf="selectedFeature === 'messages'">
+        <cms2-message-list></cms2-message-list>
+    </div>
+
+    <div *ngIf="selectedFeature === 'contacts'">
+        <cms2-contacts></cms2-contacts>
+    </div>
 </div>

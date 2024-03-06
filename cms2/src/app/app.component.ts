@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cms2';
+
+  // Add a class variable named selectedFeature of the string datatype.
+  selectedFeature: string = 'documents';
+
+  // Method to switch the view based on the selected feature.
+  switchView(selectedFeature: string) {
+    // Assign the value of the selectedFeature input parameter to the class variable.
+    this.selectedFeature = selectedFeature;
+  }
 }
