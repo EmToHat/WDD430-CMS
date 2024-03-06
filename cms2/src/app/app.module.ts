@@ -12,6 +12,9 @@ import { ContactItemComponent } from './contacts/contact-list/contact-item/conta
 import { DocumentListComponent } from './documents/document-list/document-list.component';
 import { DocumentItemComponent } from './documents/document-list/document-item/document-item.component';
 import { DocumentDetailComponent } from './documents/document-detail/document-detail.component';
+import { MessageListComponent } from './messages/message-list/message-list.component';
+import { MessageEditComponent } from './messages/message-edit/message-edit.component';
+import { MessageItemComponent } from './messages/message-list/message-item/message-item.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { DocumentDetailComponent } from './documents/document-detail/document-de
     ContactItemComponent,
     DocumentListComponent,
     DocumentItemComponent,
-    DocumentDetailComponent
+    DocumentDetailComponent,
+    MessageListComponent,
+    MessageEditComponent,
+    MessageItemComponent
   ],
   imports: [
     BrowserModule
