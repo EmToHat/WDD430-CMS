@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 import { Contact } from '../contacts/contact-model';
 
 @Component({
-  selector: 'cms2-contacts',
+  selector: 'cms-contacts',
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.css'
 })

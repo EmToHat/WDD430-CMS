@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Contact } from '../../contact-model';
 
 @Component({
-  selector: 'cms2-contact-item',
+  selector: 'cms-contact-item',
   templateUrl: './contact-item.component.html',
   styleUrl: './contact-item.component.css'
 })

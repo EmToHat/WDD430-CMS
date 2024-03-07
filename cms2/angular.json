@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cms2": {
+    "cms": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,12 +18,12 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "cms2",
+      "prefix": "cms",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/cms2",
+            "outputPath": "dist/cms",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "cms2:build:production"
+              "buildTarget": "cms:build:production"
             },
             "development": {
-              "buildTarget": "cms2:build:development"
+              "buildTarget": "cms:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "cms2:build"
+            "buildTarget": "cms:build"
           }
         },
         "test": {

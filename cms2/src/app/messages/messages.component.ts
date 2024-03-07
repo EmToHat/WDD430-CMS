@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'cms2-messages',
+  selector: 'cms-messages',
   templateUrl: './messages.component.html',
   styleUrl: './messages.component.css'
 })

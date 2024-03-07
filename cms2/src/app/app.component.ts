@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'cms2-root',
+  selector: 'cms-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'cms2';
+  title = 'cms';
 
   // Add a class variable named selectedFeature of the string datatype.
   selectedFeature: string = 'messages';

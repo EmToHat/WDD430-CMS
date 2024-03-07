@@ -2,7 +2,7 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular
 import { Message } from '../message-model';
 
 @Component({
-  selector: 'cms2-message-edit',
+  selector: 'cms-message-edit',
   templateUrl: './message-edit.component.html',
   styleUrl: './message-edit.component.css'
 })

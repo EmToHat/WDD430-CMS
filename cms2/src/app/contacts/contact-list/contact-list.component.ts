@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Contact } from '../contact-model';
 
 @Component({
-  selector: 'cms2-contact-list',
+  selector: 'cms-contact-list',
   templateUrl: './contact-list.component.html',
   styleUrl: './contact-list.component.css'
 })

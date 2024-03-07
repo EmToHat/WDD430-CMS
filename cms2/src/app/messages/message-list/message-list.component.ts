@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Message }  from '../message-model';
 
 @Component({
-  selector: 'cms2-message-list',
+  selector: 'cms-message-list',
   templateUrl: './message-list.component.html',
   styleUrl: './message-list.component.css'
 })
