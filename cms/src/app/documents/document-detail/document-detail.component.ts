@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Document } from '../document.model';
 
 @Component({
@@ -8,6 +8,8 @@ import { Document } from '../document.model';
 })
 export class DocumentDetailComponent {
   // Define the variable to store the list of documents.
-  public documents: Document[] = [];
+  //public documents: Document[] = [];
 
+  // Define the input variable
+  @Input() document: Document;
 }

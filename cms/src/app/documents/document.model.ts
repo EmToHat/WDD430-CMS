@@ -17,7 +17,7 @@ export class Document {
     public url: string;
     
     // list of related document objects.
-    public children: Document[];
+    public children?: Document[];
 
     // Additional properties or methods can be added as needed
 

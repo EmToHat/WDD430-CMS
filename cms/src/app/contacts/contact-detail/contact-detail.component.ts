@@ -10,7 +10,7 @@ export class ContactDetailComponent {
   // Define the variable to store the list of contacts.
   public contacts: Contact[] = [];
 
-   // Define the input variable
-   @Input() contact: Contact;
+    // Define the input variable
+    @Input() contact: Contact;
 
 }
