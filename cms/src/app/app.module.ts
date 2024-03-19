@@ -34,6 +34,7 @@ import { MobileDropdownDirective } from './common/mobile-dropdown.directive';
 import { ContactService } from './contacts/contacts.service';
 import { DocumentService } from './documents/documents.service';
 import { MessageService } from './messages/messages.service';
+import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { MessageService } from './messages/messages.service';
 
     // Directives
     DropdownDirective,
-    MobileDropdownDirective
+    MobileDropdownDirective,
+    DocumentEditComponent
   ],
   imports: [
     BrowserModule,

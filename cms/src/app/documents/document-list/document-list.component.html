@@ -3,6 +3,8 @@
         <div class="row pad-left-right">
             <span class="pull-left title">Documents</span>
             <a class="btn btn-success pull-right">Add Document</a>
+            <a [routerLink]="['/documents/detail', document.id]">View Details</a>
+            <a [routerLink]="['/documents/edit']">Edit Document</a>
         </div>
     </div>
     <div class="panel-body">
