@@ -12,8 +12,9 @@ import { ContactsComponent } from './contacts/contacts.component';
 const appRoutes: Routes = [
     { path: '', redirectTo: '/documents', pathMatch: 'full' },
     { path: 'documents', component: DocumentsComponent, children: [
-        { path: 'detail/:id', component: DocumentDetailComponent },
-        { path: 'edit', component: DocumentEditComponent }
+        { path: 'new', component: DocumentEditComponent },
+        { path: ':id', component: DocumentDetailComponent },
+        { path: ':id/edit', component: DocumentEditComponent }
     ] },
     { path: 'messages', component: MessageListComponent },
     { path: 'contacts', component: ContactsComponent }

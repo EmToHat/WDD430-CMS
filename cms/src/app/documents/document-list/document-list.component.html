@@ -2,9 +2,9 @@
     <div class="panel-heading">
         <div class="row pad-left-right">
             <span class="pull-left title">Documents</span>
-            <a class="btn btn-success pull-right">Add Document</a>
-            <a [routerLink]="['/documents/detail', document.id]">View Details</a>
-            <a [routerLink]="['/documents/edit']">Edit Document</a>
+            <a [routerLink]="['/documents/new']">New Documents</a>
+            <a [routerLink]="['/documents', document.id]">View Details</a>
+            <a [routerLink]="['/documents', document.id, 'edit']">Edit Document</a>
         </div>
     </div>
     <div class="panel-body">
