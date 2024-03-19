@@ -17,10 +17,11 @@
                     <div class="btn-container col-xs-6">
                         <div class="btn-group pull-right" role="group" aria-label="Button Group">
                             <div class="col-xs-4">
-                                <button class="btn btn-primary">Edit</button>
+                                <a class="btn btn-info pull-right" [routerLink]="['/contacts', contact.id, 'edit']">Edit</a>
+                                <!--<a class="btn btn-primary pull-right" [routerLink]="['/contacts', contact.id]" (click)="onView()">View</a>-->
                             </div>
                             <div class="col-xs-4">
-                                <button class="btn btn-danger">Delete</button>
+                                <a class="btn btn-danger pull-right" [routerLink]="['/contacts', contact.id, 'delete']" (click)="onDelete()">Delete</a>
                             </div>
                         </div>
                     </div>

@@ -14,6 +14,7 @@ export class DocumentService {
   }
 
   documentSelectedEvent: EventEmitter<Document> = new EventEmitter<Document>();
+  documentChangedEvent: EventEmitter<Document[]> = new EventEmitter<Document[]>();
 
   getDocuments(): Document[] {
     //console.log('getDocuments() method called');
@@ -25,6 +26,18 @@ export class DocumentService {
   getDocument(id: string){
     const document = this.documents.find((document) => document.id === id);
     return document;
+  }
+
+  deleteDocument(document: Document) {
+    if (!document) {
+      return;
+    }
+    const pos = this.documents.indexOf(document);
+    if (pos < 0) {
+      return;
+    }
+    this.documents.splice(pos, 1);
+    this.documentChangedEvent.emit(this.documents.slice());
   }
 
   onSelected(document: Document) {

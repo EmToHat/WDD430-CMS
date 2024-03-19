@@ -19,6 +19,8 @@ import { DocumentsComponent } from './documents/documents.component';
 import { DocumentListComponent } from './documents/document-list/document-list.component';
 import { DocumentItemComponent } from './documents/document-list/document-item/document-item.component';
 import { DocumentDetailComponent } from './documents/document-detail/document-detail.component';
+import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
+
 
 // Messages
 import { MessagesComponent } from './messages/messages.component';
@@ -34,7 +36,8 @@ import { MobileDropdownDirective } from './common/mobile-dropdown.directive';
 import { ContactService } from './contacts/contacts.service';
 import { DocumentService } from './documents/documents.service';
 import { MessageService } from './messages/messages.service';
-import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
+import { WindRefService } from './wind-ref.service';
+import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +68,8 @@ import { DocumentEditComponent } from './documents/document-edit/document-edit.c
     // Directives
     DropdownDirective,
     MobileDropdownDirective,
-    DocumentEditComponent
+    DocumentEditComponent,
+    ContactEditComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +79,8 @@ import { DocumentEditComponent } from './documents/document-edit/document-edit.c
     // Services
     ContactService,
     DocumentService,
-    MessageService
+    MessageService,
+    WindRefService
   ],
   bootstrap: [AppComponent]
 })

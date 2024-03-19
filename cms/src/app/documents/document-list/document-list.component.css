@@ -13,3 +13,15 @@
     padding-left:1rem;
     padding-right:1rem;
 }
+
+.cms-document-item {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    /*
+    border: thick double #32a1ce;
+    border: solid 0.01px #bdbdbd;
+    border-radius: 8px;
+    */
+    
+}

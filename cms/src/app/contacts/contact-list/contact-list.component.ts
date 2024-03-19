@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Contact } from '../contact-model';
 import { ContactService } from '../contacts.service';
 
@@ -11,22 +12,22 @@ export class ContactListComponent implements OnInit {
   contacts: Contact[] = []; // Initialize with an empty array
 
   // Inject the ContactService in the constructor
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService, 
+    private router: Router,
+    private route: ActivatedRoute) {}
 
   ngOnInit() {
-    //console.log('ContactListComponent: Initialized!')
-
-    // Call the getContacts method in the ContactService
     this.contacts = this.contactService.getContacts();
-
-    //console.log('ContactListComponent - Contacts: ', this.contacts);
+      this.contactService.contactChangedEvent.subscribe((contacts: Contact[]) => {
+        this.contacts = contacts;
+      });
   }
 
   
   // Method to handle the selection of a contact and emit the event
   onSelectedContact(contact: Contact) {
-    console.log('ContactListComponent - Contact Selected: ', contact);
-    this.contactService.onSelected(contact);
+    this.contactService.contactSelectedEvent.emit(contact);
+    this.router.navigate([contact.id], {relativeTo: this.route})
   }
   
 }

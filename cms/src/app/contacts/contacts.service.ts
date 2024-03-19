@@ -12,6 +12,7 @@ export class ContactService {
   contacts: Contact[] = [];
 
   contactSelectedEvent = new EventEmitter<Contact>();
+  contactChangedEvent: EventEmitter<Contact[]> = new EventEmitter<Contact[]>();
 
   constructor() {
       //console.log('ContactService: Initialized!');
@@ -30,6 +31,18 @@ export class ContactService {
     const contact = this.contacts.find((contact) => contact.id === id);
     //console.log('ContactService - Contact: ', contact);
     return contact;
+  }
+
+  deleteContact(contact: Contact) {
+    if (!contact) {
+      return;
+    }
+    const pos = this.contacts.indexOf(contact);
+    if (pos < 0) {
+      return;
+    }
+    this.contacts.splice(pos, 1);
+    this.contactChangedEvent.emit(this.contacts.slice());
   }
 
   onSelected(contact: Contact) {

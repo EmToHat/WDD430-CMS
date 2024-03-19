@@ -1,4 +1,4 @@
-.documentDiv {
+/*.documentDiv {
     width: 9rem;
     height: 11rem;
     margin: 2px;
@@ -6,4 +6,38 @@
     border: solid thin darkgrey;
     float: left;
     padding: .25rem
+}*/
+
+.cms-item-title {
+    font-size: larger;
+}
+
+.btn {
+    margin: 5px;
+    font-size: small;
+    width: 100%;
+    padding: 8px;
+}
+
+.document-list-items a {
+    color: #333333;
+}
+
+.document-list-items a:hover {
+    text-decoration: none;
+}
+.document-list-items {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.document-list-items:hover {
+    color: #333333;
+    background-color: #ddd;
 }

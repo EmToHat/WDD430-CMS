@@ -1,3 +1,3 @@
-<a class="list-group-item clearfix documentDiv" >
-    <p>{{ document.name }}</p>
-</a>  
+<div class="panel-body document-list-items">
+    <a class="cms-item-title" [routerLink]="['/documents', document.id]" routerLinkActive="active">{{ document.name }}</a>
+</div>
