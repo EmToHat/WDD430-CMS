@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Contact } from '../contact-model';
 import { ContactService } from '../contacts.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'cms-contact-list',
@@ -10,6 +11,7 @@ import { ContactService } from '../contacts.service';
 })
 export class ContactListComponent implements OnInit {
   contacts: Contact[] = []; // Initialize with an empty array
+  subscription: Subscription;
 
   // Inject the ContactService in the constructor
   constructor(private contactService: ContactService, 
@@ -18,12 +20,20 @@ export class ContactListComponent implements OnInit {
 
   ngOnInit() {
     this.contacts = this.contactService.getContacts();
-      this.contactService.contactChangedEvent.subscribe((contacts: Contact[]) => {
-        this.contacts = contacts;
-      });
+    this.contactService.contactChangedEvent.subscribe((contacts: Contact[]) => {
+      this.contacts = contacts;
+    });
+    this.subscription = this.contactService.contactsChanged.subscribe(
+      (updatedContacts: Contact[]) => {
+        this.contacts = updatedContacts;
+      }
+    );
   }
 
-  
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
   // Method to handle the selection of a contact and emit the event
   onSelectedContact(contact: Contact) {
     this.contactService.contactSelectedEvent.emit(contact);
