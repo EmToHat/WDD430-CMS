@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 // App
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 // Header
 import { HeaderComponent } from './header/header.component';
@@ -65,7 +66,8 @@ import { MessageService } from './messages/messages.service';
     MobileDropdownDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
   ],
   providers: [
     // Services
