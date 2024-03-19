@@ -1,16 +1,8 @@
-<cms-header (selectedFeatureEvent)="switchView($event)"></cms-header>
-
-<div class="container pull-left">
-    <!-- Conditionally load components based on selectedFeature -->
-    <div *ngIf="selectedFeature === 'documents'">
-        <cms-documents></cms-documents>
-    </div>
-
-    <div *ngIf="selectedFeature === 'messages'">
-        <cms-message-list></cms-message-list>
-    </div>
-
-    <div *ngIf="selectedFeature === 'contacts'">
-        <cms-contacts></cms-contacts>
+<cms-header></cms-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>
