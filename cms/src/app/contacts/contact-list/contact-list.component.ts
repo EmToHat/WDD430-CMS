@@ -1,28 +1,32 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { Contact } from '../contact-model';
+import { ContactService } from '../contacts.service';
 
 @Component({
   selector: 'cms-contact-list',
   templateUrl: './contact-list.component.html',
-  styleUrl: './contact-list.component.css'
+  styleUrls: ['./contact-list.component.css'],
 })
-export class ContactListComponent {
-  // Define the variable to store the list of contacts.
-  public contacts: Contact[] = [];
+export class ContactListComponent implements OnInit {
+  contacts: Contact[] = []; // Initialize with an empty array
 
-  // Create a new custom EventEmitter with Contact as the data type
-  @Output() selectedContactEvent: EventEmitter<Contact> = new EventEmitter<Contact>();
+  // Inject the ContactService in the constructor
+  constructor(private contactService: ContactService) {}
 
+  ngOnInit() {
+    //console.log('ContactListComponent: Initialized!')
+
+    // Call the getContacts method in the ContactService
+    this.contacts = this.contactService.getContacts();
+
+    //console.log('ContactListComponent - Contacts: ', this.contacts);
+  }
+
+  
   // Method to handle the selection of a contact and emit the event
-  onSelected(contact: Contact) {
-    this.selectedContactEvent.emit(contact);
+  onSelectedContact(contact: Contact) {
+    console.log('ContactListComponent - Contact Selected: ', contact);
+    this.contactService.onSelected(contact);
   }
-
-  // Initialize the array with 2 dummy contact objects.
-  constructor() {
-    this.contacts = [
-      new Contact('1', 'R. Kent Jackson', 'jacksonk@byui.edu', '208-496-3771', '../../../assets/images/jacksonk.jpg'),
-      new Contact('2', 'Rex Barzee', 'barzeer@byui.edu', '208-496-3768', '../../../assets/images/barzeer.jpg')
-    ]
-  }
+  
 }

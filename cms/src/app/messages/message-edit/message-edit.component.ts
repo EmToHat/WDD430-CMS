@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { Message } from '../message-model';
+import { MessageService } from '../messages.service';
 
 @Component({
   selector: 'cms-message-edit',
@@ -9,11 +10,13 @@ import { Message } from '../message-model';
 export class MessageEditComponent {
   // Declare and Initialize the currentSender variable
   currentSender: string = 'Emilee Hatch'; 
+  
+  constructor(private messageService: MessageService) {}
+
+  ngOnInit(): void {}
 
   @ViewChild('subjectRef') subjectRef: ElementRef;
   @ViewChild('msgTextRef') msgTextRef: ElementRef;
-
-  @Output() addMessageEvent = new EventEmitter<Message>();
 
   // Logic to handle sending the message
   onSendMessage() {
@@ -32,7 +35,7 @@ export class MessageEditComponent {
     };
 
     // Emit the newMessage using the custom event
-    this.addMessageEvent.emit(newMessage);
+    this.messageService.addMessage(newMessage);
 
     // Clear the form after sending the message.
     this.onClear();

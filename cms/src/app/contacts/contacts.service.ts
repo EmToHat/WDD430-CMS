@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Contact } from './contact-model';
 import { MOCKCONTACTS } from './MOCKCONTACTS';
 
@@ -6,23 +6,34 @@ import { MOCKCONTACTS } from './MOCKCONTACTS';
   providedIn: 'root'
 })
 
-export class ContactsService {
-
+export class ContactService {
   // Create a class variable named 'contacts' initialized with an empty array
   // private contacts: Contact[] = [];
-  contacts: Contact [] =[];
-    Constructor() {
-        this.contacts = MOCKCONTACTS;
+  contacts: Contact[] = [];
+
+  contactSelectedEvent = new EventEmitter<Contact>();
+
+  constructor() {
+      //console.log('ContactService: Initialized!');
+      this.contacts = MOCKCONTACTS;
     }
-    
+  
+  // Method to return a copy of the contacts array
+  getContacts() {
+    const contacts = this.contacts.slice();
+    //console.log('ContactService - Contacts: ', contacts);
+    return contacts; // Using slice() to create a shallow copy of the array
+  }
 
   // Method to find a specific Contact object in the contacts array by ID
-  getContact(id: string): Contact | null {
-    for (const contact of this.contacts) {
-      if (contact.id === id) {
-        return contact; // Return the Contact object if found
-      }
-    }
-    return null; // Return null if the contact with the specified ID is not found
+  getContact(id: string) {
+    const contact = this.contacts.find((contact) => contact.id === id);
+    //console.log('ContactService - Contact: ', contact);
+    return contact;
+  }
+
+  onSelected(contact: Contact) {
+    //console.log('ContactService - Selected Contact: ', contact);
+    this.contactSelectedEvent.emit(contact);
   }
 }

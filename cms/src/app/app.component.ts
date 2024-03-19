@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'cms';
 
   // Add a class variable named selectedFeature of the string datatype.
-  selectedFeature: string = 'documents';
+  selectedFeature: string = 'messages';
 
   // Method to switch the view based on the selected feature.
   switchView(selectedFeature: string) {

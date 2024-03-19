@@ -10,7 +10,6 @@
                 <div class="clearfix"></div>
             </div>
             <div class="panel-body">
-                <cms-contact-item *ngFor="let contact of contacts" [contact]="contact" (click)="onSelected(contact)"></cms-contact-item>
-            </div>
+                <cms-contact-item *ngFor="let contact of contacts" [contact]="contact" (click)="onSelectedContact(contact)"></cms-contact-item>            </div>
     </div>
 </div>

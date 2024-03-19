@@ -4,12 +4,12 @@ import { Document } from '../document.model';
 @Component({
   selector: 'cms-document-detail',
   templateUrl: './document-detail.component.html',
-  styleUrl: './document-detail.component.css'
+  styleUrls: ['./document-detail.component.css'],
 })
 export class DocumentDetailComponent {
   // Define the variable to store the list of documents.
   //public documents: Document[] = [];
 
   // Define the input variable
-  @Input() document: Document;
+  @Input() document: Document | null = null;
 }

@@ -8,7 +8,7 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'Rex Barzee',
     email: 'barzeer@byui.edu',
     phone: '208-496-3768',
-    imgUrl: '../../assets/images/barzeer.jpg',
+    imageUrl: '../../assets/images/barzeer.jpg',
     group: null
   },
   // index 1
@@ -17,7 +17,7 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'Bradley Armstrong',
     email: 'armstrongb@byui.edu',
     phone: '208-496-3766',
-    imgUrl: '../../assets/images/armstrongb.jpg',
+    imageUrl: '../../assets/images/armstrongb.jpg',
     group: null
   },
   // index 2
@@ -26,7 +26,7 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'Lee Barney',
     email: 'barneyl@byui.edu',
     phone: '208-496-3767',
-    imgUrl: '../../assets/images/barneyl.jpg',
+    imageUrl: '../../assets/images/barneyl.jpg',
     group: null
   },
   // index 3
@@ -35,7 +35,7 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'Kory Godfrey',
     email: 'godfreyko@byui.edu',
     phone: '208-496-3770',
-    imgUrl: '../../assets/images/godfreyko.jpg',
+    imageUrl: '../../assets/images/godfreyko.jpg',
     group: null
   },
   // index 4
@@ -44,7 +44,7 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'R. Kent Jackson',
     email: 'jacksonk@byui.edu',
     phone: '208-496-3771',
-    imgUrl: '../../assets/images/jacksonk.jpg',
+    imageUrl: '../../assets/images/jacksonk.jpg',
     group: null
   },
   // index 5
@@ -53,7 +53,7 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'Craig Lindstrom',
     email: 'lindstromc@byui.edu',
     phone: '208-496-3769',
-    imgUrl: '../../assets/images/lindstromc.jpg',
+    imageUrl: '../../assets/images/lindstromc.jpg',
     group: null
   },
   // index 6
@@ -62,7 +62,7 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'Michael McLaughlin',
     email: 'mclaughlinm@byui.edu',
     phone: '208-496-3772',
-    imgUrl: '../../assets/images/mclaughlinm.jpg',
+    imageUrl: '../../assets/images/mclaughlinm.jpg',
     group: null
   },
   // index 7
@@ -71,7 +71,7 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'Brent Morring',
     email: 'morringb@byui.edu',
     phone: '208-496-3778',
-    imgUrl: '../../assets/images/morringb.jpg',
+    imageUrl: '../../assets/images/morringb.jpg',
     group: null
   },
   // index 8
@@ -80,7 +80,7 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'Mark Olaveson',
     email: 'olavesonm@byui.edu',
     phone: '208-496-3773',
-    imgUrl: '../../assets/images/olavesonm.jpg',
+    imageUrl: '../../assets/images/olavesonm.jpg',
     group: null
   },
   // index 9
@@ -89,7 +89,7 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'Steven Rigby',
     email: 'rigbys@byui.edu',
     phone: '208-496-3774',
-    imgUrl: '../../assets/images/rigbys.jpg',
+    imageUrl: '../../assets/images/rigbys.jpg',
     group: null
   },
   // index 10
@@ -98,7 +98,7 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'Blaine Robertson',
     email: 'robertsonb@byui.edu',
     phone: '208-496-3775',
-    imgUrl: '../../assets/images/robertsonb.jpg',
+    imageUrl: '../../assets/images/robertsonb.jpg',
     group: null
   },
   // index 11
@@ -107,7 +107,7 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'Randy Somsen',
     email: 'somsenr@byui.edu',
     phone: '208-496-3776',
-    imgUrl: '../../assets/images/somsenr.jpg',
+    imageUrl: '../../assets/images/somsenr.jpg',
     group: null
   },
   // index 12
@@ -116,20 +116,20 @@ export const MOCKCONTACTS: Contact[] = [
     name: 'Shane Thompson',
     email: 'thompsonda@byui.edu',
     phone: '208-496-3776',
-    imgUrl: '../../assets/images/thompsonda.jpg',
+    imageUrl: '../../assets/images/thompsonda.jpg',
     group: null
   },
 
   // teams
   // index 13
   {
-    id: '4', name: 'Network/OS team', email: ' ', phone: ' ', imgUrl: ' ', group: [
+    id: '4', name: 'Network/OS team', email: ' ', phone: ' ', imageUrl: ' ', group: [
     {
       id: '2',
       name: 'Bradley Armstrong',
       email: 'armstrongb@byui.edu',
       phone: '208-496-3766',
-      imgUrl: '../../assets/images/armstrongb.jpg',
+      imageUrl: '../../assets/images/armstrongb.jpg',
       group: null
     },
     {
@@ -137,7 +137,7 @@ export const MOCKCONTACTS: Contact[] = [
       name: 'Mark Olaveson',
       email: 'olavesonm@byui.edu',
       phone: '208-496-3773',
-      imgUrl: '../../assets/images/olavesonm.jpg',
+      imageUrl: '../../assets/images/olavesonm.jpg',
       group: null
     },
     {
@@ -145,7 +145,7 @@ export const MOCKCONTACTS: Contact[] = [
       name: 'Steven Rigby',
       email: 'rigbys@byui.edu',
       phone: '208-496-3774',
-      imgUrl: '../../assets/images/rigbys.jpg',
+      imageUrl: '../../assets/images/rigbys.jpg',
       group: null
     }
   ]
@@ -153,13 +153,13 @@ export const MOCKCONTACTS: Contact[] = [
 
   // index 14
   {
-    id: '6', name: 'Software Development team', email: ' ', phone: ' ', imgUrl: ' ', group: [
+    id: '6', name: 'Software Development team', email: ' ', phone: ' ', imageUrl: ' ', group: [
     {
       id: '1',
       name: 'Rex Barzee',
       email: 'barzeer@byui.edu',
       phone: '208-496-3768',
-      imgUrl: '../../assets/images/barzeer.jpg',
+      imageUrl: '../../assets/images/barzeer.jpg',
       group: null
     },
     {
@@ -167,7 +167,7 @@ export const MOCKCONTACTS: Contact[] = [
       name: 'Lee Barney',
       email: 'barneyl@byui.edu',
       phone: '208-496-3767',
-      imgUrl: '../../assets/images/barneyl.jpg',
+      imageUrl: '../../assets/images/barneyl.jpg',
       group: null
     },
     {
@@ -175,7 +175,7 @@ export const MOCKCONTACTS: Contact[] = [
       name: 'R. Kent Jackson',
       email: 'jacksonk@byui.edu',
       phone: '208-496-3771',
-      imgUrl: '../../assets/images/jacksonk.jpg',
+      imageUrl: '../../assets/images/jacksonk.jpg',
       group: null
     },
     {
@@ -183,7 +183,7 @@ export const MOCKCONTACTS: Contact[] = [
       name: 'Mark Olaveson',
       email: 'olavesonm@byui.edu',
       phone: '208-496-3773',
-      imgUrl: '../../assets/images/olavesonm.jpg',
+      imageUrl: '../../assets/images/olavesonm.jpg',
       group: null
     }
   ]
@@ -191,13 +191,13 @@ export const MOCKCONTACTS: Contact[] = [
 
   // index 15
   {
-    id: '10', name: 'Web Development team', email: ' ', phone: ' ', imgUrl: ' ', group: [
+    id: '10', name: 'Web Development team', email: ' ', phone: ' ', imageUrl: ' ', group: [
     {
       id: '15',
       name: 'Blaine Robertson',
       email: 'robertsonb@byui.edu',
       phone: '208-496-3775',
-      imgUrl: '../../assets/images/robertsonb.jpg',
+      imageUrl: '../../assets/images/robertsonb.jpg',
       group: null
     },
     {
@@ -205,7 +205,7 @@ export const MOCKCONTACTS: Contact[] = [
       name: 'Randy Somsen',
       email: 'somsenr@byui.edu',
       phone: '208-496-3776',
-      imgUrl: '../../assets/images/somsenr.jpg',
+      imageUrl: '../../assets/images/somsenr.jpg',
       group: null
     },
     {
@@ -213,7 +213,7 @@ export const MOCKCONTACTS: Contact[] = [
       name: 'Shane Thompson',
       email: 'thompsonda@byui.edu',
       phone: '208-496-3776',
-      imgUrl: '../../assets/images/thompsonda.jpg',
+      imageUrl: '../../assets/images/thompsonda.jpg',
       group: null
     }
   ]
@@ -221,13 +221,13 @@ export const MOCKCONTACTS: Contact[] = [
 
   // index 16
   {
-    id: '14', name: 'Database team', email: ' ', phone: ' ', imgUrl: ' ', group: [
+    id: '14', name: 'Database team', email: ' ', phone: ' ', imageUrl: ' ', group: [
     {
       id: '7',
       name: 'R. Kent Jackson',
       email: 'jacksonk@byui.edu',
       phone: '208-496-3771',
-      imgUrl: '../../assets/images/jacksonk.jpg',
+      imageUrl: '../../assets/images/jacksonk.jpg',
       group: null
     },
     {
@@ -235,7 +235,7 @@ export const MOCKCONTACTS: Contact[] = [
       name: 'Michael McLaughlin',
       email: 'mclaughlinm@byui.edu',
       phone: '208-496-3772',
-      imgUrl: '../../assets/images/mclaughlinm.jpg',
+      imageUrl: '../../assets/images/mclaughlinm.jpg',
       group: null
     },
     {
@@ -243,7 +243,7 @@ export const MOCKCONTACTS: Contact[] = [
       name: 'Brent Morring',
       email: 'morringb@byui.edu',
       phone: '208-496-3778',
-      imgUrl: '../../assets/images/morringb.jpg',
+      imageUrl: '../../assets/images/morringb.jpg',
       group: null
     }
   ]
@@ -251,13 +251,13 @@ export const MOCKCONTACTS: Contact[] = [
 
   // index 17
   {
-    id: '18', name: 'Computer Security team', email: ' ', phone: ' ', imgUrl: ' ', group: [
+    id: '18', name: 'Computer Security team', email: ' ', phone: ' ', imageUrl: ' ', group: [
     {
       id: '5',
       name: 'Kory Godfrey',
       email: 'godfreyko@byui.edu',
       phone: '208-496-3770',
-      imgUrl: '../../assets/images/godfreyko.jpg',
+      imageUrl: '../../assets/images/godfreyko.jpg',
       group: null
     },
     {
@@ -265,7 +265,7 @@ export const MOCKCONTACTS: Contact[] = [
       name: 'Craig Lindstrom',
       email: 'lindstromc@byui.edu',
       phone: '208-496-3769',
-      imgUrl: '../../assets/images/lindstromc.jpg',
+      imageUrl: '../../assets/images/lindstromc.jpg',
       group: null
     },
     {
@@ -273,7 +273,7 @@ export const MOCKCONTACTS: Contact[] = [
       name: 'Steven Rigby',
       email: 'rigbys@byui.edu',
       phone: '208-496-3774',
-      imgUrl: '../../assets/images/rigbys.jpg',
+      imageUrl: '../../assets/images/rigbys.jpg',
       group: null
     }
   ]

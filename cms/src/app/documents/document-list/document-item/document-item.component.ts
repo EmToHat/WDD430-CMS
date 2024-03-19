@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Document } from '../../document.model';
+import { DocumentService } from '../../documents.service';
 
 @Component({
   selector: 'cms-document-item',
@@ -9,4 +10,11 @@ import { Document } from '../../document.model';
 export class DocumentItemComponent {
   // Define the input variable
   @Input() document: Document;
+
+  constructor(private documentService: DocumentService) {}
+    
+  onSelected() {
+    this.documentService.documentSelectedEvent.emit(this.document);
+  }
+
 }

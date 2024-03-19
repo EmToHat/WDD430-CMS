@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Contact } from '../../contact-model';
+import { ContactService } from '../../contacts.service';
 
 @Component({
   selector: 'cms-contact-item',
   templateUrl: './contact-item.component.html',
-  styleUrl: './contact-item.component.css'
+  styleUrls: ['./contact-item.component.css'],
 })
 export class ContactItemComponent {
   // The @Input decorator is used to define an input property for the Angular component.
@@ -14,4 +15,11 @@ export class ContactItemComponent {
   // When a contact is passed to this component using property binding, it can be accessed
   // within the ContactItemComponent class, enabling dynamic rendering based on the provided data.
   @Input() contact: Contact;
+
+  constructor(private contactService: ContactService) {}
+
+  onSelected() {
+    //console.log('ContactItemComponent: Selected contact:', this.contact);
+    this.contactService.contactSelectedEvent.emit(this.contact);
+  }
 }

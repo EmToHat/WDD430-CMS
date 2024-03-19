@@ -11,10 +11,10 @@ export class Document {
     public name: string;
 
     // brief description of the document
-    public description: string;
+    public description?: string;
 
     // url where the document is located
-    public url: string;
+    public url?: string;
     
     // list of related document objects.
     public children?: Document[];
