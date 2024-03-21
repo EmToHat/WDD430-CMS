@@ -13,8 +13,8 @@ export class DocumentService {
   maxDocumentId: number;
 
   constructor() { 
-    //this.documents = MOCKDOCUMENTS;
-    this.documents = [];
+    this.documents = MOCKDOCUMENTS;
+    //this.documents = [];
     this.maxDocumentId = this.getMaxId();
   }
 

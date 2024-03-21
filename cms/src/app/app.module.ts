@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+//import {DndModule} from 'ng2-dnd';
 
 // App
 import { AppComponent } from './app.component';
@@ -74,6 +78,10 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DragDropModule,
+    //DndModule.forRoot(),
   ],
   providers: [
     // Services

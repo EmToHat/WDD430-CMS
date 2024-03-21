@@ -1,1 +1,70 @@
-<p>document-edit works!</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" id="document-edit">
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="name">Document Title:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        class="form-control"
+                        size="120"
+                        max="120"
+                        name="name"
+                        [ngModel]="document?.title"
+                        #name="ngModel"
+                        required>
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                        Name is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="description">Document Description:</label>
+                    <input
+                        type="text"
+                        id="description"
+                        class="form-control"
+                        size="120"
+                        max="255"
+                        name="description">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="url">Document URL:</label>
+                    <input
+                        type="text"
+                        id="url"
+                        class="form-control"
+                        size="150"
+                        max="255"
+                        name="url"
+                        [ngModel]="document?.URL"
+                        #url="ngModel"
+                        required>
+                    <div *ngIf="url.invalid && (url.dirty || url.touched)" class="alert alert-danger">
+                        URL is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-danger" *ngIf="f.form.invalid && (name.invalid || url.invalid)">
+                The Document Title and Document URL are required fields.
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 btn-toolbar">
+                    <button class="btn btn-success" type="submit">Save</button>
+                    <button class="btn btn-primary" type="button">Cancel</button> <!-- (click)="onCancel()" -->
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
