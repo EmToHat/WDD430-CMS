@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+//import { DragDropModule } from '@angular/cdk/drag-drop';
+//import {DndModule} from 'ng2-dnd';
 
 // App
 import { AppComponent } from './app.component';
@@ -11,10 +15,11 @@ import { HeaderComponent } from './header/header.component';
 // Contacts
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
+import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
 import { ContactItemComponent } from './contacts/contact-list/contact-item/contact-item.component';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
-import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
 import { ContactsFilterPipe } from './contacts/contacts-filter.pipe';
+
 
 // Documents
 import { DocumentsComponent } from './documents/documents.component';
@@ -71,11 +76,17 @@ import { WindRefService } from './wind-ref.service';
     MobileDropdownDirective,
     DocumentEditComponent,
     ContactEditComponent,
-    ContactsFilterPipe
+
+    // Pipes
+    ContactsFilterPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    //DragDropModule,
+    //DndModule.forRoot(),
   ],
   providers: [
     // Services

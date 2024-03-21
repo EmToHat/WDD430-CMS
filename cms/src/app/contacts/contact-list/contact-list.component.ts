@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./contact-list.component.css'],
 })
 export class ContactListComponent implements OnInit {
+  term: string = '';
   contacts: Contact[] = []; // Initialize with an empty array
   subscription: Subscription;
 
@@ -28,6 +29,10 @@ export class ContactListComponent implements OnInit {
         this.contacts = updatedContacts;
       }
     );
+  }
+
+  search(value: string) {
+    this.term = value; // Assign the input parameter value to the term property
   }
 
   ngOnDestroy() {

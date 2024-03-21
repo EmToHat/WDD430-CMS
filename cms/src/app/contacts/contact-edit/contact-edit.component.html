@@ -1,1 +1,101 @@
-<p>contact-edit works!</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form id="contact-edit" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="name">Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        class="form-control required"
+                        size="120"
+                        max="120"
+                        name="name"
+                        [ngModel]="contact?.name" 
+                        required #name="ngModel">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="email">Email:</label>
+                    <input
+                        type="text"
+                        id="email"
+                        class="form-control required"
+                        size="120"
+                        max="255"
+                        name="email" 
+                        [ngModel]="contact?.email" 
+                        required 
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
+                        #emailRef="ngModel">
+                    <!-- Error message for invalid email -->
+                    <div *ngIf="emailRef.invalid && emailRef.touched" class="alert alert-danger">
+                        Enter a valid Email address.
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="phone">Phone:</label>
+                    <input
+                        type="text"
+                        id="phone"
+                        class="form-control"
+                        size="150"
+                        max="255"
+                        name="phone" 
+                        [ngModel]="contact?.phone" 
+                        required 
+                        pattern="\D*([2-9]\d{2})(\D*)([2-9]\d{2})(\D*)(\d{4})\D*" 
+                        #phone="ngModel">
+                    <!-- Error message for invalid phone number -->
+                    <div *ngIf="phone.invalid && phone.touched" class="alert alert-danger">
+                        Enter a valid phone number.
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="imageUrl">Image URL:</label>
+                    <input
+                        type="text"
+                        id="imageUrl"
+                        class="form-control"
+                        size="150"
+                        max="255"
+                        name="imageUrl"
+                        [ngModel]="contact?.imageUrl"
+                        #imageURL="ngModel"
+                        ngModel>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="groupList">Group Contacts:</label>
+
+                    <div class="row" id="groupList" style="min-height: 3rem;" cdkDropList (cdkDropListDropped)="onContactDropped($event)">
+                        <div *ngFor="let contact of groupContacts; let i = index">
+                            <div>
+                                <cms-contact-item class="col-sm-11" [contact]="contact"></cms-contact-item>
+                                <button class="btn btn-danger col-sm-2 deleteButton" (click)="onRemoveItem(i)">X</button>
+                            </div>
+                        </div>
+                        <span class="dragMsg" *ngIf="groupContacts?.length < 1"> Drag contacts in group here</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 btn-toolbar">
+                    <button class="btn btn-success" type="submit">Save</button>
+                    <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button> <!--(click)="onCancel()"-->
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

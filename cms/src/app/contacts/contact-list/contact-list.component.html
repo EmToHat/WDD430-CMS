@@ -1,16 +1,24 @@
 <div class="row panel-container">
     <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="col-xs-9">
-                    <h1 class="panel-title">Contacts</h1>
-                </div>
-                <div class="col-xs-3">
-                    <a class="btn btn-success pull-right" [routerLink]="['/contacts/new']">Add Contact</a>
-                </div>
-                <div class="clearfix"></div>
+        <div class="panel-heading">
+            <div class="row">
+                <span class="title pad-left-right">Contacts</span>
             </div>
-            <div class="panel-body">
-                <cms-contact-item *ngFor="let contact of contacts" [contact]="contact"></cms-contact-item>            
+            <div class="row">
+                <div class="input-group pull-left pad-left-right col-xs-7">
+                    <!-- Add the search box input text field here -->
+                    <input type="text" class="form-control" placeholder="Enter a search value" #searchBox (keyup)="search(searchBox.value)">
+                    <div class="glyphicon glyphicon-search input-group-addon" (click)="search(searchBox.value)"></div>
+                </div>
             </div>
+            <div class="pull-right pad-left-right">
+                <a class="btn btn-success" [routerLink]="['new']">New Contact</a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!-- Apply ContactsFilterPipe to filter contacts based on search term -->
+            <cms-contact-item *ngFor="let contact of contacts | contactsFilter: term" [contact]="contact"></cms-contact-item>            
+        </div>
     </div>
 </div>
+
