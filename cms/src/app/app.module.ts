@@ -11,8 +11,10 @@ import { HeaderComponent } from './header/header.component';
 // Contacts
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
-import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
 import { ContactItemComponent } from './contacts/contact-list/contact-item/contact-item.component';
+import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
+import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
+import { ContactsFilterPipe } from './contacts/contacts-filter.pipe';
 
 // Documents
 import { DocumentsComponent } from './documents/documents.component';
@@ -37,7 +39,6 @@ import { ContactService } from './contacts/contacts.service';
 import { DocumentService } from './documents/documents.service';
 import { MessageService } from './messages/messages.service';
 import { WindRefService } from './wind-ref.service';
-import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
     DropdownDirective,
     MobileDropdownDirective,
     DocumentEditComponent,
-    ContactEditComponent
+    ContactEditComponent,
+    ContactsFilterPipe
   ],
   imports: [
     BrowserModule,
