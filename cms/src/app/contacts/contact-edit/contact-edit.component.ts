@@ -3,7 +3,7 @@ import { Contact } from '../contact-model';
 import { ContactService } from '../contacts.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { CdkDragDrop } from '@angular/cdk/drag-drop';
+//import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'cms-contact-edit',
@@ -73,11 +73,12 @@ export class ContactEditComponent implements OnInit{
     this.router.navigate(['../'], { relativeTo: this.route });
   }
 
+  /*
   onContactDropped(event: CdkDragDrop<Contact[]>) {
     const draggedContact = event.item.data;
     if (!this.groupContacts.includes(draggedContact)) {
       this.groupContacts.push(draggedContact);
     }
-  }
+  }*/
   
 }

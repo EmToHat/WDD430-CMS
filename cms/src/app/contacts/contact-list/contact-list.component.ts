@@ -19,17 +19,28 @@ export class ContactListComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) {}
 
-  ngOnInit() {
-    this.contacts = this.contactService.getContacts();
-    this.contactService.contactChangedEvent.subscribe((contacts: Contact[]) => {
-      this.contacts = contacts;
-    });
-    this.subscription = this.contactService.contactsChanged.subscribe(
-      (updatedContacts: Contact[]) => {
-        this.contacts = updatedContacts;
-      }
-    );
-  }
+    ngOnInit() {
+      // Subscribe to the observable to get the initial contacts data
+      this.subscription = this.contactService.getContacts().subscribe(
+        (contacts: Contact[]) => {
+          this.contacts = contacts;
+        }
+      );
+  
+      // Subscribe to contactChangedEvent to update contacts when they change
+      this.contactService.contactChangedEvent.subscribe(
+        (contacts: Contact[]) => {
+          this.contacts = contacts;
+        }
+      );
+  
+      // Subscribe to contactsChanged to update contacts when they change
+      this.contactService.contactsChanged.subscribe(
+        (updatedContacts: Contact[]) => {
+          this.contacts = updatedContacts;
+        }
+      );
+    }
 
   search(value: string) {
     this.term = value; // Assign the input parameter value to the term property
