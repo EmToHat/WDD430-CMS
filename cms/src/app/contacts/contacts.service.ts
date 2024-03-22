@@ -1,15 +1,13 @@
+import { catchError } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
-import { Contact } from './contact-model';
-import { MOCKCONTACTS } from './MOCKCONTACTS';
 import { Subject } from 'rxjs';
+import { Contact } from './contact-model';
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class ContactService {
-  // Create a class variable named 'contacts' initialized with an empty array
-  // private contacts: Contact[] = [];
   private contacts: Contact[] = [];
 
   contactSelectedEvent = new EventEmitter<Contact>();
@@ -17,85 +15,64 @@ export class ContactService {
   contactsChanged = new Subject<Contact[]>();
   contactListChangedEvent = new Subject<Contact[]>();
 
-  constructor() {
-      //console.log('ContactService: Initialized!');
-      this.contacts = MOCKCONTACTS;
-    }
-  
-  // Method to return a copy of the contacts array
+  constructor(private http: HttpClient) { }
+
   getContacts() {
-    const contacts = this.contacts.slice();
-    //console.log('ContactService - Contacts: ', contacts);
-    return contacts; // Using slice() to create a shallow copy of the array
+    return this.http.get<Contact[]>('https://wdd430-cms-22cc9-default-rtdb.firebaseio.com/contacts');
   }
 
-  // Method to find a specific Contact object in the contacts array by ID
   getContact(id: string) {
     const contact = this.contacts.find((contact) => contact.id === id);
-    //console.log('ContactService - Contact: ', contact);
     return contact;
   }
 
   addContact(newContact: Contact) {
-    if (!newContact) {
-      return;
-    }
-    newContact.id = this.generateUniqueId(); 
-
-    // Add the new contact to the contacts array
+     // Add the new contact to contacts array
     this.contacts.push(newContact);
-
-    // Emit event to inform about changes in contacts list
-    this.contactListChangedEvent.next([...this.contacts]);
+     // Call storeContacts() to update the contact list on the server
+    this.storeContacts();
   }
 
   updateContact(originalContact: Contact, newContact: Contact) {
-    if (!originalContact || !newContact) {
-      return;
+    // Find the index of the original contact
+    const index = this.contacts.findIndex(con => con.id === originalContact.id);
+    if (index !== -1) {
+      // Update the contact in the array
+      this.contacts[index] = newContact;
+      // Call storeContacts() to update the contact list on the server
+      this.storeContacts();
     }
-
-    const index = this.contacts.findIndex(contact => contact === originalContact);
-    if (index < 0) {
-      return;
-    }
-
-    // Update the contact with new data
-    this.contacts[index] = newContact;
-
-    // Emit event to inform about changes in contacts list
-    this.contactListChangedEvent.next([...this.contacts]);
   }
 
   deleteContact(contact: Contact) {
-    if (!contact) {
-      return;
+    // Find the index of the contact to delete
+    const index = this.contacts.findIndex(con => con.id === contact.id);
+    if (index !== -1) {
+      // Remove the contact from the array
+      this.contacts.splice(index, 1);
+      // Call storeContacts() to update the contact list on the server
+      this.storeContacts();
     }
-
-    const index = this.contacts.findIndex(c => c === contact);
-    if (index < 0) {
-      return;
-    }
-
-    // Remove the contact from the contacts array
-    this.contacts.splice(index, 1);
-
-    // Emit event to inform about changes in contacts list
-    this.contactListChangedEvent.next([...this.contacts]);
   }
 
-  // Method to generate unique id for new contact
-  private generateUniqueId(): string {
-    // Your implementation to generate a unique string id (e.g., using UUID)
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random() * 16 | 0,
-          v = c === 'x' ? r : (r & 0x3 | 0x8);
-      return v.toString(16);
-    });
+  storeContacts(): void {
+    const contactsString = JSON.stringify(this.contacts);
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+
+    this.http.put('https://wdd430-cms-22cc9-default-rtdb.firebaseio.com/contacts', contactsString, { headers })
+      .pipe(
+        catchError((error: any) => {
+          console.error('Error storing contacts:', error);
+          throw error;
+        })
+      )
+      .subscribe(() => {
+        this.contactListChangedEvent.next(this.contacts.slice());
+      });
   }
-  
 
   onSelected(contact: Contact) {
-    //console.log('ContactService - Selected Contact: ', contact);
     this.contactSelectedEvent.emit(contact);
   }
 }
+

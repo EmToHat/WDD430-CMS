@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 //import { DragDropModule } from '@angular/cdk/drag-drop';
 //import {DndModule} from 'ng2-dnd';
 
 // App
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 
 // Header
 import { HeaderComponent } from './header/header.component';
@@ -44,6 +45,7 @@ import { ContactService } from './contacts/contacts.service';
 import { DocumentService } from './documents/documents.service';
 import { MessageService } from './messages/messages.service';
 import { WindRefService } from './wind-ref.service';
+
 
 @NgModule({
   declarations: [
@@ -85,6 +87,7 @@ import { WindRefService } from './wind-ref.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     //DragDropModule,
     //DndModule.forRoot(),
   ],
